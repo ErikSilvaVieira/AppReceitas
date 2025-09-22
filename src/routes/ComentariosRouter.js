@@ -1,5 +1,6 @@
 import express from "express";
 import ctrl from "../controllers/comentariosController.js";
+import comentariosController from "../controllers/comentariosController.js";
 
 const router = express.Router();
 

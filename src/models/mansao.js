@@ -1,5 +1,5 @@
 import mongoose from "mongoose"; 
-import { deleteCascadeComentarios } from "../middlewares/deleteCascadeComentários.js";
+import { deleteCascadeComentarios } from "../middlewares/deleteCascadeComentarios.js"; 
 
 const mansaoSchema = new mongoose.Schema(
   {

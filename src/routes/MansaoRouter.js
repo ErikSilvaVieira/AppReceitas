@@ -1,10 +1,12 @@
 import express from "express";
-import ctrl from "../controllers/mansaoController.js";
+import ctrl from "../controllers/mansaoController.js"; // ✅ importa o controller
 
 const router = express.Router();
 
 router.get("/", ctrl.listMansao);
-router.get("/new", (req, res) => res.render("pages/mansaoFormulario", { title: "Nova Mansão" }));
+router.get("/new", (req, res) => 
+  res.render("pages/mansaoFormulario", { title: "Nova Mansão" })
+);
 router.get("/:id", ctrl.listMansaoById);
 router.get("/:id/edit", ctrl.editMansao);
 

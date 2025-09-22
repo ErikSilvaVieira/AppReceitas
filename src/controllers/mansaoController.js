@@ -1,4 +1,4 @@
-import Mansao from "../models/mansao.js";
+import mansao from "../models/mansao.js";
 import Comentarios from "../models/Comentarios.js";
 
 class mansaoController {
