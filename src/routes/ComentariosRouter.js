@@ -1,10 +1,9 @@
 import express from "express";
-import ctrl from "../controllers/comentariosController.js";
-import comentariosController from "../controllers/comentariosController.js";
+import comentariosController from "../controllers/ComentariosController.js";
 
 const router = express.Router();
 
-router.post("/", ctrl.createComentarios);
-router.delete("/:id", ctrl.deleteComentarios);
+router.post("/", comentariosController.createComentarios);
+router.delete("/:id", comentariosController.deleteComentarios);
 
 export default router;
