@@ -1,5 +1,3 @@
-import Comentarios from "../models/Comentarios.js";
-
 class comentariosController {
   static createComentarios = async (req, res, next) => {
     try {
