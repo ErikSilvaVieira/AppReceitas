@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+  <main class="container">
+    <h1>Editar Mansão</h1>
+
+    <form action="/mansao/<%= mansao._id %>?_method=PUT" method="post" class="new-mansion-form form-block">
+      <label for="nome">Nome</label>
+      <input id="nome" name="nome" value="<%= mansao.nome %>" required />
+
+      <label for="localizacao">Localização</label>
+      <input id="localizacao" name="localizacao" value="<%= mansao.localizacao %>" required />
+
+     <label for="preco">Preço</label>
+<input 
+  id="preco" 
+  name="preco" 
+  type="text" 
+  value="<%= mansao.preco.toLocaleString('pt-BR') %>" 
+  required
+/>
+
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao"><%= mansao.descricao %></textarea>
+
+      <label for="imagem">Imagem (URL)</label>
+      <input id="imagem" name="imagem" value="<%= mansao.imagem %>" />
+
+      <label for="categoria">Categoria</label>
+      <select id="categoria" name="categoria" required>
+        <option value="Mansão" <%=mansao.categoria==='Mansão' ?'selected':'' %>>Mansão</option>
+        <option value="Mansão Premium" <%=mansao.categoria==='Mansão Premium' ?'selected':'' %>>Mansão Premium</option>
+        <option value="Mansão Premium Plus" <%=mansao.categoria==='Mansão Premium Plus' ?'selected':'' %>>Mansão Premium
+          Plus</option>
+        <option value="Outro" <%=mansao.categoria==='Outro' ?'selected':'' %>>Outro</option>
+      </select>
+
+      <button type="submit" class="btn-primary">Salvar alterações</button>
+    </form>
+  </main>
+
+  <%- include('../partials/footer') %>

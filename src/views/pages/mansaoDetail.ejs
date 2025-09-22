@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+
+<div class="container mansion-detail-container">
+  <div class="mansion-detail">
+    <h2><%= mansao.nome %></h2>
+
+    <p class="mansion-meta"><strong>Localização:</strong> <%= mansao.localizacao %></p>
+    <p class="mansion-meta"><strong>Preço:</strong> R$ <%= mansao.preco %></p>
+    <p class="mansion-meta"><strong>Categoria:</strong> <%= mansao.categoria %></p>
+
+    <div class="block">
+      <h3>Descrição</h3>
+      <p class="description"><%= mansao.descricao %></p>
+    </div>
+
+    <% if (mansao.imagem) { %>
+      <div class="block">
+        <h3>Imagem</h3>
+        <img src="<%= mansao.imagem %>" alt="<%= mansao.nome %>" style="max-width:100%; border-radius:8px;">
+      </div>
+    <% } %>
+
+    <div style="margin:1rem 0; display:flex; gap:.5rem;">
+      <a href="/mansao/<%= mansao._id %>/edit" class="btn-primary">Editar</a>
+      <form action="/mansao/<%= mansao._id %>?_method=DELETE" method="post">
+        <button class="btn-outline" onclick="return confirm('Confirmar exclusão?')">Excluir</button>
+      </form>
+    </div>
+
+    <div class="comments-section">
+      <h3>Comentários</h3>
+      <ul class="comments-list">
+        <% if (comentarios && comentarios.length) { %>
+          <% comentarios.forEach(c => { %>
+            <li class="comment">
+              <p class="comment-text"><strong><%= c.autor %>:</strong> <%= c.texto %></p>
+              <p class="comment-meta"><%= new Date(c.createdAt).toLocaleString() %></p>
+            </li>
+          <% }) %>
+        <% } else { %>
+          <li class="comment">Sem comentários ainda.</li>
+        <% } %>
+      </ul>
+
+      <form class="comment-form" action="/comentarios" method="POST">
+        <input type="hidden" name="mansaoId" value="<%= mansao._id %>">
+        <label for="autor">Seu nome</label>
+        <input type="text" id="autor" name="autor" required>
+        <label for="texto">Comentário</label>
+        <textarea id="texto" name="texto" required></textarea>
+        <button type="submit">Enviar comentário</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

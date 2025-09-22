@@ -1,0 +1,136 @@
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; height: auto; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* Containers */
+.container { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+
+/* Header */
+.site-header { background:linear-gradient(90deg, #658f60, #79aa73); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; }
+.brand { font-weight: 700; text-decoration: none; color: #333; }
+.main-nav a { margin-left: 0.75rem; text-decoration: none; color: #333; }
+.btn-outline { padding: 0.4rem 1rem; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; height: 100%; width: auto; }
+
+/* Ferramentas */
+.tools { display: flex; flex-direction: column; gap: 0.75rem; margin: 1rem 0; }
+.search-form { display: flex; gap: 0.5rem; margin-bottom: 2.5rem;}
+.search-form input { flex: 1; padding: 0.6rem; border: 1px solid #e6e6e6; border-radius: 8px; }
+.search-form button { padding: 0.6rem 1rem; border: none; border-radius: 8px; cursor: pointer; background: #658f60; color: #fff; }
+
+/* Categorias */
+.categories { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.chip { padding: 0.4rem 0.6rem; border-radius: 999px; text-decoration: none; border: 1px solid transparent; color: #333; }
+.chip.active, .chip:hover { background: #658f60; border-color: #658f60 ; }
+
+/* Lista de mansões */
+.mansion-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.card { background: #bfdbbb; border-radius: 12px; padding: 1rem; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+.card-title { font-size: 1.05rem; margin-bottom: 0.25rem; }
+.card-title a { text-decoration: none; color: #222; }
+.meta { font-size: 0.85rem; color: #000000; margin-bottom: 0.5rem; }
+.excerpt { color: black; }
+.empty { color: black; padding: 1rem; text-align: center; }
+
+/* Paginação */
+.pagination { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 1rem 0; }
+.page-btn { text-decoration: none; padding: 0.4rem 0.75rem; border-radius: 8px; border: 1px solid #eee; }
+
+/* Detalhes da mansão */
+.mansion-detail-container { display: flex; flex-direction: column; align-items: center; margin: 2rem auto; max-width: 800px; padding: 1rem; }
+.mansion-detail { width: 100%; padding: 2rem; background: #fff; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); margin-top: 1rem; }
+
+.mansion-detail h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #222; }
+.mansion-meta { font-size: 0.9rem; color: #777; margin-bottom: 1.5rem; }
+
+.block { margin-top: 1rem; }
+.block h3 { font-size: 1.2rem; margin-bottom: 0.75rem; color: #333; border-bottom: 2px solid #658f60; padding-bottom: 0.25rem; }
+
+.feature-list { list-style: disc; padding-left: 1.5rem; color: #444; }
+.feature-list li { margin-bottom: 0.4rem; }
+
+.description { white-space: pre-wrap; line-height: 1.6; color: #333; background: #fff7f2; padding: 1rem; border-radius: 8px; border-left: 4px solid #658f60; }
+
+/* Comentários */
+.comments-section { margin-top: 2rem; }
+.comments-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+.comment { background: #fafafa; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #eee; }
+.comment-text { margin-bottom: 0.3rem; color: #444; }
+.comment-meta { font-size: 0.8rem; color: #888; text-align: right; }
+
+.comment-form { margin-top: 1.5rem; }
+.comment-form label { display: block; margin: 0.5rem 0 0.25rem; font-weight: 500; }
+.comment-form input, .comment-form textarea { width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; }
+.comment-form textarea { min-height: 80px; resize: vertical; }
+.comment-form button { margin-top: 0.75rem; padding: 0.7rem 1.2rem; border: none; border-radius: 10px; background: #658f60; color: #fff; font-weight: 600; transition: background 0.2s ease; }
+.comment-form button:hover { background: #658f60; }
+
+/* Formulários */
+.form-block { background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+.new-mansion-form label { display: block; margin: 0.5rem 0; }
+.new-mansion-form input, .new-mansion-form textarea, .new-mansion-form select { width: 100%; padding: 0.6rem; border: 1px solid #e6e6e6; border-radius: 8px; }
+.btn-primary { background: #658f60; color: #fff; padding: 0.6rem 1rem; border-radius: 10px; border: none; cursor: pointer; }
+
+/* Footer */
+.site-footer { margin-top: 2rem; padding: 1rem; background: #f8f8f8; border-top: 1px solid #eee; }
+.footer-inner { text-align: center; color: #666; }
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .header-inner { flex-direction: column; gap: 0.5rem; }
+  .search-form { flex-direction: column; }
+}
+
+/* Pequenas melhorias visuais */
+a { color: inherit; }
+button { cursor: pointer; }
+
+/* Header responsivo */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;   /* permite quebrar no celular */
+  gap: 0.5rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;   /* quebra os links no celular */
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid;
+  padding: 8px;
+}
+
+/* Grid de mansões responsivo */
+.mansion-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+  h1 { font-size: 1.5rem; }
+  .card { padding: 0.75rem; }
+  .brand { font-size: 1.2rem; }
+  .btn-primary, .btn-outline { padding: 0.5rem 0.8rem; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .search-form { flex-direction: column; }
+  .search-form input, .search-form button { width: 100%; }
+  .mansion-detail { padding: 1rem; }
+  .feature-list { font-size: 0.9rem; }
+}

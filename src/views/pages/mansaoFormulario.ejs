@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+  <main class="container">
+    <h1>Nova Mansão</h1>
+
+    <form action="/mansao" method="post" class="new-mansion-form form-block">
+      <label for="nome">Nome</label>
+      <input id="nome" name="nome" required />
+
+      <label for="localizacao">Localização</label>
+      <input id="localizacao" name="localizacao" required />
+
+<label for="preco">Preço</label>
+<input 
+  id="preco" 
+  name="preco" 
+  type="text" 
+  placeholder="Ex: 1.000.000" 
+  required
+/>
+
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao"></textarea>
+
+      <label for="imagem">Imagem (URL)</label>
+      <input id="imagem" name="imagem" />
+
+      <label for="categoria">Categoria</label>
+      <select id="categoria" name="categoria" required>
+        <option value="Mansão">Mansão</option>
+        <option value="Mansão Premium">Mansão Premium</option>
+        <option value="Mansão Premium Plus">Mansão Premium Plus</option>
+        <option value="Outro">Outro</option>
+      </select>
+
+      <button type="submit" class="btn-primary">Salvar</button>
+    </form>
+  </main>
+
+  <%- include('../partials/footer') %>

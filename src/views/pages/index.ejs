@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<main class="container">
+  <h1>Dev Mansions</h1>
+
+  <form action="/" method="get" class="search-form">
+    <input type="text" name="q" value="<%= q || '' %>" placeholder="Buscar por nome, localização ou categoria..." />
+    <button type="submit" class="btn-primary">Buscar</button>
+    <a href="/" class="btn-outline">Limpar</a>
+  </form>
+
+  <a href="/mansao/new" class="btn-primary" style="margin-top:1rem;">Adicionar Mansão</a>
+
+  <div class="mansion-list" style="margin-top:1rem;">
+    <% if (mansaos && mansaos.length) { %>
+      <% mansaos.forEach(m => { %>
+        <div class="card">
+          <h2 class="card-title"><a href="/mansao/<%= m._id %>"><%= m.nome %></a></h2>
+          <p class="meta"><%= m.localizacao %> | R$ <%= m.preco %></p>
+          <p class="meta"><%= m.categoria %></p>
+          <p class="excerpt"><%= m.descricao ? m.descricao.substring(0, 120) : '' %>...</p>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p class="empty">Nenhuma mansão encontrada.</p>
+    <% } %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
