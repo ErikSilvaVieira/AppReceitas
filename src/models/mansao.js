@@ -7,7 +7,6 @@ const mansaoSchema = new mongoose.Schema(
     localizacao: { type: String, required: true },
     preco: { type: Number, required: true },
     descricao: { type: String },
-    imagem: { type: String },
     categoria: { 
       type: String, 
       enum: ["Mansão", "Mansão Premium", "Mansão Premium Plus", "Outro"],
